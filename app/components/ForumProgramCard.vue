@@ -10,13 +10,21 @@ defineProps<{ program: ForumProgram }>()
     :to="`/forum/${program.id}`"
     color="#dcecf4"
     rounded="lg"
-    class="pa-4 d-flex align-center justify-space-between"
+    class="pa-4 h-100 d-flex align-center justify-space-between"
   >
     <div>
-      <div style="font-size: 26px; font-weight: 600;">{{ program.faculty }} {{ program.university }}</div>
+      <div class="university-name">{{ program.faculty }} {{ program.university }}</div>
       <div class="mt-1" style="font-size: 20px;">{{ program.direction }}</div>
     </div>
 
     <v-icon :icon="mdiChevronRight" />
   </v-card>
 </template>
+
+<style lang="postcss" scoped>
+.university-name {
+  font-size: clamp(1.1rem, 4vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+</style>
