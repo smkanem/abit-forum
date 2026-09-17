@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const baseURL = process.env.NUXT_APP_BASE_URL || '/'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -18,14 +20,21 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL,
     head: {
       htmlAttrs: {
         lang: 'ru'
       },
       link: [
-        { rel: 'icon', href: '/favicon.ico' },
+        { rel: 'icon', href: `${baseURL}favicon.ico` },
       ]
     }
+  },
+
+  nitro: {
+    prerender: {
+      routes: ['/', '/forum/1', '/forum/2', '/forum/3', '/forum/4', '/forum/5', '/forum/6', '/forum/search'],
+    },
   },
 
   robots: {

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { app: { baseURL } } = useRuntimeConfig()
+
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} – Форум` : 'Форум'
@@ -7,7 +9,7 @@ useHead({
     {
       rel: "icon",
       type: "image/svg+xml",
-      href: "/logo.svg",
+      href: `${baseURL}logo.svg`,
     },
   ],
 })
