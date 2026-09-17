@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { mdiAccountCircleOutline } from '@mdi/js'
 import Logo from '~/assets/images/logo.svg'
 </script>
 
@@ -9,7 +10,12 @@ import Logo from '~/assets/images/logo.svg'
       <div @click="navigateTo('/')" class="d-flex flex-row justify-center align-center cursor-pointer logo h-100">
         <Logo class="logo-img" />
 
-        <div class="font-weight-bold" style="font-size: 22px; margin-left: 13px;">Сайт</div>
+        <div class="font-weight-bold" style="font-size: 22px; margin-left: 13px;">Форум</div>
+      </div>
+
+      <div class="d-flex flex-row align-center" style="gap: 8px;">
+        <span style="font-size: 16px;">Иванов Иван</span>
+        <v-icon :icon="mdiAccountCircleOutline" size="34" />
       </div>
     </v-container>
   </div>

@@ -12,7 +12,7 @@ export default defineVuetifyConfiguration({
     themes: {
       light: {
         colors: {
-          primary: '#27384b',
+          primary: '#1a95ad',
           accent: '#e76f51'
         },
       }
