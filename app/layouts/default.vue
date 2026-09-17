@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { mdiAccountCircleOutline, mdiHome } from '@mdi/js'
+import { mdiAccountCircleOutline, mdiForum } from '@mdi/js'
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import { mdiAccountCircleOutline, mdiHome } from '@mdi/js'
     <v-container class="d-flex align-center justify-space-between pt-0 pb-0"
       style="height: 60px; position: relative;">
       <div @click="navigateTo('/')" class="d-flex flex-row justify-center align-center cursor-pointer logo h-100">
-        <v-icon :icon="mdiHome" color="#1A95AD" size="40" />
+        <v-icon :icon="mdiForum" color="#1A95AD" size="40" />
 
         <div class="font-weight-bold" style="font-size: 22px; margin-left: 13px;">Форум</div>
       </div>

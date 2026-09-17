@@ -10,7 +10,7 @@ defineProps<{ program: ForumProgram }>()
     :to="`/forum/${program.id}`"
     color="#dcecf4"
     rounded="lg"
-    class="pa-4 d-flex align-center justify-space-between"
+    class="pa-4 h-100 d-flex align-center justify-space-between"
   >
     <div>
       <div class="university-name">{{ program.faculty }} {{ program.university }}</div>
