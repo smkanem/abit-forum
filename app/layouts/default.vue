@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import { mdiAccountCircleOutline } from '@mdi/js'
-import Logo from '~/assets/images/logo.svg'
+import { mdiAccountCircleOutline, mdiHome } from '@mdi/js'
 </script>
 
 <template>
@@ -8,7 +7,7 @@ import Logo from '~/assets/images/logo.svg'
     <v-container class="d-flex align-center justify-space-between pt-0 pb-0"
       style="height: 60px; position: relative;">
       <div @click="navigateTo('/')" class="d-flex flex-row justify-center align-center cursor-pointer logo h-100">
-        <Logo class="logo-img" />
+        <v-icon :icon="mdiHome" color="#1A95AD" size="40" />
 
         <div class="font-weight-bold" style="font-size: 22px; margin-left: 13px;">Форум</div>
       </div>
@@ -21,14 +20,6 @@ import Logo from '~/assets/images/logo.svg'
   </div>
 
   <NuxtPage />
-
-  <v-spacer />
-
-  <footer>
-    <v-container>
-      Футер
-    </v-container>
-  </footer>
 </template>
 
 <style lang="postcss" scoped>
@@ -37,16 +28,13 @@ import Logo from '~/assets/images/logo.svg'
   user-select: none;
 }
 
-.logo-img {
-  height: 40px;
-}
-
 .header {
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
+  background-color: #ffffff;
   transition: all .15s;
 }
 </style>

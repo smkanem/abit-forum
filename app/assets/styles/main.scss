@@ -1,3 +1,8 @@
 .v-application {
   font-family: 'Montserrat', sans-serif;
 }
+
+.v-overlay__content > .v-list {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+}

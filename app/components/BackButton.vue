@@ -3,7 +3,7 @@ import { mdiArrowLeft } from "@mdi/js";
 </script>
 
 <template>
-  <div style="display: flex;" class="pb-2">
+  <div style="display: flex;" class="pb-1">
     <div 
       @click="$router.back()" 
       class="d-flex pt-1 pr-4 pb-1 cursor-pointer flex-row flex-nowrap align-center justify-start back"
