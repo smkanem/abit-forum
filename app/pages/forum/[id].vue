@@ -30,21 +30,49 @@ if (matchedProgram) {
 const title = computed(() => `${selection.value.faculty} ${selection.value.university} — ${selection.value.direction}`)
 
 const topics: ForumTopic[] = [
-  { id: '1', label: 'Нагрузка', icon: mdiBatteryLow },
-  { id: '2', label: 'Общежитие', icon: mdiHomeCity },
-  { id: '3', label: 'Физ-ра', icon: mdiRun },
-  { id: '4', label: 'Поступление', icon: mdiSchool },
+  { id: 'workload', label: 'Нагрузка', icon: mdiBatteryLow },
+  { id: 'dorm', label: 'Общежитие', icon: mdiHomeCity },
+  { id: 'pe', label: 'Физ-ра', icon: mdiRun },
+  { id: 'admission', label: 'Поступление', icon: mdiSchool },
 ]
 const activeTopic = ref(topics[0].id)
 
-const messages = ref<ForumMessage[]>([
-  {
-    id: '0',
-    author: 'Иванов Иван',
-    time: '13:12 вчера',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-  },
-])
+const messagesByTopic = reactive<Record<string, ForumMessage[]>>({
+  workload: [
+    {
+      id: '0',
+      author: 'Иванов Иван',
+      time: '13:12 вчера',
+      text: 'На первом курсе нагрузка ощутимая — почти каждый день пары до вечера плюс домашки по матану и программированию. Ко второму курсу привыкаешь, становится полегче.',
+    },
+  ],
+  dorm: [
+    {
+      id: '0',
+      author: 'Иванов Иван',
+      time: 'вчера',
+      text: 'Общежитие в 15 минутах от корпусов, живём по 2-3 человека в комнате. На этаже есть кухня, но лучше сразу брать свою посуду и чайник.',
+    },
+  ],
+  pe: [
+    {
+      id: '0',
+      author: 'Иванов Иван',
+      time: '2 дня назад',
+      text: 'Физра два раза в неделю, можно выбрать секцию — я хожу на плавание. Нормативы ГТО никто не заставляет сдавать, если что.',
+    },
+  ],
+  admission: [
+    {
+      id: '0',
+      author: 'Иванов Иван',
+      time: '3 дня назад',
+      text: 'Я подавал документы через Госуслуги — сильно упростило жизнь. Из советов: следите за приказами о зачислении, они выходят волнами.',
+    },
+  ],
+})
+
+const messages = computed(() => messagesByTopic[activeTopic.value] ?? [])
 
 const newMessage = ref('')
 
@@ -52,8 +80,8 @@ function sendMessage() {
   if (!newMessage.value.trim())
     return
 
-  messages.value.push({
-    id: String(messages.value.length),
+  messagesByTopic[activeTopic.value].push({
+    id: String(messagesByTopic[activeTopic.value].length),
     author: 'Иванов Иван',
     time: 'сейчас',
     text: newMessage.value,
