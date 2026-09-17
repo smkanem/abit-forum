@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} – Сайт` : 'Сайт'
+    return titleChunk ? `${titleChunk} – Форум` : 'Форум'
   },
   link: [
     {
@@ -14,16 +14,16 @@ useHead({
 
 useSeoMeta({
   description: 'Описание',
-  ogTitle: 'Сайт',
+  ogTitle: 'Форум',
   ogDescription: 'Описание',
   ogImage: 'https://site.com/og-image.jpg',
   ogUrl: 'https://site.com/',
   ogLocale: 'ru-RU',
-  twitterTitle: 'Сайт',
+  twitterTitle: 'Форум',
   twitterDescription: 'Описание',
   twitterImage: 'https://site.com/og-image.jpg',
   twitterCard: 'summary',
-  applicationName: 'Сайт',
+  applicationName: 'Форум',
 })
 </script>
 

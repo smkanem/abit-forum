@@ -4,7 +4,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/robots', '@nuxtjs/sitemap', 'vuetify-nuxt-module', 'nuxt-svgo'],
 
-  css: ['~/assets/styles/main.scss'],
+  css: [
+    '@fontsource/montserrat/400.css',
+    '@fontsource/montserrat/500.css',
+    '@fontsource/montserrat/600.css',
+    '~/assets/styles/main.scss',
+  ],
 
   runtimeConfig: {
     public: {
