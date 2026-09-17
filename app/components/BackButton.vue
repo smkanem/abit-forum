@@ -1,11 +1,20 @@
 <script setup lang="ts">
 import { mdiArrowLeft } from "@mdi/js";
+
+function goBack() {
+  if (window.history.state?.back) {
+    useRouter().back()
+  }
+  else {
+    navigateTo('/')
+  }
+}
 </script>
 
 <template>
   <div style="display: flex;" class="pb-1">
-    <div 
-      @click="$router.back()" 
+    <div
+      @click="goBack"
       class="d-flex pt-1 pr-4 pb-1 cursor-pointer flex-row flex-nowrap align-center justify-start back"
     >
       <v-icon :icon="mdiArrowLeft" />
